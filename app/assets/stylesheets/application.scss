@@ -1,0 +1,84 @@
+// Graphical variables
+@import "config/fonts";
+@import "config/colors";
+@import "config/bootstrap_variables";
+
+// External libraries
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+// Your CSS partials
+@import "layouts/index";
+@import "components/index";
+@import "pages/index";
+
+ul {
+  list-style-type: none;
+
+}
+.add-dose-form {
+  display: none;
+  position: fixed;
+  width: 100%;
+  top: 130px;
+  z-index: 10;
+  div {
+    background: white;
+    padding: 20px;
+
+
+  }
+
+}
+.wrapper {
+  z-index: 1;
+}
+
+.grey {
+  background: black;
+  opacity: 0.6;
+}
+
+.display {
+  display: block;
+}
+a:hover {
+  text-decoration: none;
+}
+
+h1, h2, h3 {
+  font-family: 'Playball', cursive;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body *:focus {
+  outline: none;
+}
+
+.centered-button {
+  margin: 0 auto;
+}
+.index-header{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  margin-bottom: 30px;
+  h2 {
+    margin: 0;
+  }
+}
+
+.header {
+  padding: 0 15px;
+}
+.button-dose {
+  width: 100px;
+  margin: 0 5px;
+}

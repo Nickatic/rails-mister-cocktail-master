@@ -1,0 +1,51 @@
+<div class="banner home" style="background:url('https://images.unsplash.com/photo-1509807995916-c332365e2d9e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=4c8d364e633e2015fbac047f327ce098&auto=format&fit=crop&w=1942&q=80')">
+  <div class="banner-body">
+    <h1>Myster Cocktail</h1>
+    <h3><%= link_to "Create a cocktail", new_cocktail_path%></h2>
+
+  </div>
+
+</div>
+<div class="container">
+  <div class="index-header">
+    <div class="index-header-left">
+      <h2>All available cocktails</h2>
+    </div>
+    <div class="index-header-right">
+      <form action=<%= search_results_path %> method="post" class="search">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <input type="text" name="query" placeholder="Search for ingredients" class="search-input">
+        <input type="submit" class="search-blue" value="Search">
+      </form>
+    </div>
+  </div>
+
+
+  <% @cocktails.each do |cocktail| %>
+  <div class="col-xs-12 col-sm-6 col-md-4">
+    <div class="card">
+      <% if cocktail.photo.present? %>
+        <% path = cl_image_path cocktail.photo, height: 300, width: 300 %>
+      <% elsif cocktail[:photo_url].present? %>
+        <% path =  cl_image_path cocktail[:photo_url], height: 300, width: 300 %>
+      <% else %>
+        <% path = cocktail.img_url %>
+      <% end %>
+      <div class="card-body" style=<%="background:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.1)),url(#{path})" %> >
+        <h1><%= cocktail.name %></h1>
+      </div>
+      <div class="card-footer">
+        <ul>
+          <% cocktail.doses.first(4).each do |dose|   %>
+            <% ingredient_id = dose.ingredient_id %>
+            <% @ingredient = Ingredient.find(ingredient_id) %>
+            <li><%=  "#{@ingredient.name} :  #{dose.description}"%></li>
+          <% end %>
+        </ul>
+      </div>
+      <%= link_to "", cocktail_path(cocktail), class: "card-link" %>
+    </div>
+
+  </div>
+  <% end %>
+</div>

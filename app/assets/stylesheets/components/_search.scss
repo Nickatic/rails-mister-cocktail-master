@@ -1,0 +1,48 @@
+.search-blue {
+  background: #071a52;
+  color: white;
+  transition: background 0.1s ease;
+  border-radius: 8px;
+  font-family: 'Playball', cursive;
+  width: 80px;
+  &:focus {
+    border: none;
+  }
+  &:hover {
+    color:#071a52;
+    background: white;
+  }
+}
+
+.text-right {
+  position: relative;
+  height: 75px;
+}
+.search {
+
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+}
+
+.search-index {
+  position: absolute;
+  right: 15px;
+}
+
+.search-button {
+  background: white;
+  border-radius: 8px;
+  font-family: 'Playball', cursive;
+  width: 80px;
+  &:focus {
+    border: none;
+  }
+  &:hover{
+    opacity: 0.9;
+  }
+}
+.search-input {
+  width: 300px
+}
+

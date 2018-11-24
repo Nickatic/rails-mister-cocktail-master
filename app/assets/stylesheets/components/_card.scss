@@ -1,0 +1,132 @@
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
+}
+.card-link:hover {
+  opacity: 0.1;
+}
+
+.card-body {
+  height: 250px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center !important;
+  color: white;
+  position: relative;
+  color: white;
+  h1 {
+    position: absolute;
+    bottom : 30px;
+    left: 30px;
+  }
+}
+
+.card {
+  height: 400px;
+  background-size: cover !important;
+  background-position: bottom;
+  margin: 10px 0;
+  position: relative;
+  box-shadow: 5px 3px 3px lightgrey;
+}
+
+.card-footer {
+  color: rgb(80,80,80);
+  padding-top: 30px;
+}
+
+.cocktail-card {
+  flex-grow: 1;
+  background-origin: border-box !important;
+  height: calc(100vh - 200px);
+  background-size: cover !important;
+  background-position: center !important;
+  position: relative;
+  h1 {
+    position: absolute;
+    right : 30px;
+    top: -10px;
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+
+  }
+
+}
+.dose-link-card {
+  position: relative;
+  height:100px;
+  h3 {
+    margin: 0;
+  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+}
+.dose-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: #071a52;
+  opacity: 0;
+  &:hover {
+    opacity: 0.2;
+  }
+
+}
+.cocktail-card, .ingredients-card {
+  box-shadow: 3px 3px 10px lightgrey;
+}
+
+.ingredients-card {
+  text-align: center;
+  padding: 0;
+  min-width: 400px;
+  max-width: 600px;
+  a {
+    color: #071a52;
+    font-weight: bold;
+  }
+
+}
+
+.recipe {
+  height: calc(100vh - 300px);
+  overflow: scroll;
+  p {
+    max-width: 500px;
+    margin: 0 20px;
+    text-align: left;
+  }
+}
+.dose {
+  padding: 10px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  h3, p {
+    margin: 0;
+  }
+
+}
+.dose-description {
+  margin-right: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  h3 {
+    width:200px;
+    text-align: left
+  }
+}

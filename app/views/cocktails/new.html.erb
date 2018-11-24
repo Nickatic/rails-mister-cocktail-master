@@ -1,0 +1,15 @@
+<div class="wrapper">
+
+<div class="col-xs-6 col-xs-offset-3">
+  <h1 class="text-center">Create a new cocktail</h1>
+  <%=  simple_form_for @cocktail do |f|%>
+    <%= f.input :name %>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
+    <%= f.submit "Add recipe", class: "btn btn-primary centered-button"%>
+
+  <% end %>
+</div>
+</div>
+
+<!--  -->

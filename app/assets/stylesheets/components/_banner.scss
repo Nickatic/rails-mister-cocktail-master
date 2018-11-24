@@ -1,0 +1,54 @@
+
+.banner {
+  height: 100vh;
+  width: 100%;
+
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  color: white;
+  text-align: center;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+
+}
+.banner h1 {
+  font-family: 'Playball', cursive;
+  text-align: center;
+  transform: rotate(-3deg);
+  font-size: 75px;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  margin-bottom: 35px
+}
+
+.banner a {
+  margin-top: 60px;
+  border-radius: 8px;
+  background: #071a52;
+  padding: 15px 25px;
+  color: white;
+  font-family: 'Playball', cursive;
+  transition: color 0.3s ease ;
+  transition: background 0.3s ease ;
+
+}
+
+.banner a:hover {
+  color:  #071a52;
+  background: white;
+}
+.banner p {
+  font-size: 25px;
+  font-weight: lighter;
+  color: rgb(255, 255, 255);
+  opacity: 0.6;
+  margin-bottom: 30px;
+}
+
+.banner-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

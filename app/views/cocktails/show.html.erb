@@ -1,0 +1,64 @@
+<div class="wrapper">
+<div class="col-xs-10 col-xs-offset-1">
+  <div class="cocktail-details">
+    <% if @cocktail.photo.present? %>
+      <% path = cl_image_path @cocktail.photo, height: 300, width: 300 %>
+    <% elsif @cocktail[:photo_url].present? %>
+      <% path =  cl_image_path @cocktail[:photo_url], height: 300, width: 300 %>
+    <% else %>
+      <% path = @cocktail.img_url %>
+    <% end %>
+    <div class="cocktail-card" style=<%= "background:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.1)),url(#{path})" %>>
+      <h1><%= @cocktail.name %></h1>
+    </div>
+    <div class="ingredients-card">
+      <div class="dose-link-card">
+        <h3>Add a dose</h3>
+        <div class="dose-link modal-link"></div>
+      </div>
+      <div class="recipe">
+        <% @cocktail.doses.each do |dose| %>
+          <% ingredient_id = dose.ingredient_id %>
+          <% @ingredient = Ingredient.find(ingredient_id) %>
+          <div class="dose">
+            <div class="dose-description">
+              <h3><%= @ingredient.name %></h3>
+              <p><strong> <%= dose.description %></strong></p>
+            </div>
+            <%= link_to "Delete this dose", dose_path(dose), method: :delete %>
+          </div>
+
+
+
+        <% end %>
+        <h3>Instructions</h3>
+        <p><%= @cocktail.instruction %></p>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+</div>
+<div class="add-dose-form">
+
+  <div class="col-xs-6 col-xs-offset-3">
+    <div>
+      <h1>Add a dose to the <%= @cocktail.name %></h1>
+      <%= simple_form_for [@cocktail, Dose.new] do |f| %>
+        <%= f.association :ingredient, prompt: "Choose an ingredient" %>
+        <%= f.input :description, placeholder: "4cl, half a lime, ..." %>
+        <div class="text-center">
+          <%= f.submit "Add", class: "btn btn-primary button-dose"%>
+          <%= link_to "Cancel", cocktail_path(@cocktail), class: "btn btn-danger button-dose" %>
+        </div>
+
+      <% end %>
+    </div>
+
+  </div>
+
+
+</div>
+
+
